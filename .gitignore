@@ -1,0 +1,57 @@
+# ----------------------
+# Node.js
+# ----------------------
+node_modules/
+npm-debug.log*
+
+# ----------------------
+# Build output
+# ----------------------
+dist/
+build/
+
+# ----------------------
+# Vite specific
+# ----------------------
+*.tsbuildinfo
+frontend/.vite
+
+# ----------------------
+# Environment variables
+# ----------------------
+.env*
+!.env.example
+
+# ----------------------
+# IDEs / Editors
+# ----------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ----------------------
+# OS / System files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# Frontend specific
+# ----------------------
+frontend/node_modules/
+frontend/dist/
+
+# ----------------------
+# Backend specific (추후 백엔드 폴더 생성을 대비)
+# ----------------------
+backend/build/
+backend/.gradle/
+backend/out/
+backend/.idea/
+
+# ----------------------
+# Logs
+# ----------------------
+logs/
+*.log
