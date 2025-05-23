@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/logme_tracker?characterEncoding=utf8&serverTimezone=UTC
+    username: logme_user
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update # 개발 중에는 편의를 위해 update, 운영 전엔 validate 또는 none 권장
+    show-sql: true
+
+server:
+  port: 8080
