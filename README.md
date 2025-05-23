@@ -19,8 +19,9 @@
 ### Backend
 - Java 17
 - Spring Boot 3
-- Spring Security + JWT
 - Spring Data JPA
+- Spring Security + JWT
+- Lombok
 - MySQL
 - Gradle
 
@@ -63,28 +64,21 @@
 ```logme-tracker/
 │
 ├── frontend/
-│   ├── public/                    # 정적 파일 (favicon 등)
+│   ├── public/                    # 정적 파일
 │   ├── src/
 │   │   ├── assets/                # 이미지, 아이콘 등 정적 리소스
 │   │   ├── components/            # 공통 UI 컴포넌트
-│   │   ├── layout/                # 페이지 공통 레이아웃 (예: Header, Footer)
+│   │   ├── layout/                # 페이지 공통 레이아웃
 │   │   ├── pages/                 # 라우트 단위 페이지 컴포넌트
-│   │   │   ├── Log.tsx           # 기록 작성 페이지
-│   │   │   ├── History.tsx       # 기록 목록 페이지
-│   │   │   ├── Detail.tsx        # 기록 상세 페이지
-│   │   │   ├── Login.tsx         # 로그인 페이지
-│   │   │   ├── Signup.tsx        # 회원가입 페이지
-│   │   │   ├── Home.tsx          # 홈 화면
-│   │   │   └── NotFound.tsx      # 404 페이지
 │   │   ├── router/               # React Router 설정
 │   │   ├── services/             # API 호출 함수 (Axios 핸들러)
-│   │   ├── hooks/                # 커스텀 훅 (예: useRecords, useAuth)
+│   │   ├── hooks/                # 커스텀 훅
 │   │   ├── store/                # Zustand 기반 전역 상태 관리
 │   │   ├── types/                # 전역 타입 정의
 │   │   ├── utils/                # 공통 유틸 함수
 │   │   ├── App.tsx               # 루트 컴포넌트
 │   │   ├── main.tsx              # 진입점
-│   │   └── index.css             # 글로벌 스타일 (Tailwind 포함)
+│   │   └── index.css             # 글로벌 스타일
 │   ├── tailwind.config.cjs       # Tailwind 설정
 │   ├── postcss.config.cjs        # PostCSS 설정
 │   ├── tsconfig.json             # TypeScript 설정
@@ -96,16 +90,23 @@
 │   │   └── main/
 │   │       ├── java/com/logme/
 │   │       │   ├── controller/   # REST API 컨트롤러
+│   │       │   ├── service/      # 비즈니스 로직 처리 서비스
+│   │       │   ├── repository/   # Spring Data JPA 레포지토리
 │   │       │   ├── domain/       # Entity 및 JPA 관련 클래스
 │   │       │   ├── dto/          # 데이터 전송용 DTO 클래스
-│   │       │   ├── repository/   # Spring Data JPA 레포지토리
-│   │       │   ├── service/      # 비즈니스 로직 처리 서비스
+│   │       │   ├── config/       # Security, Jackson, Swagger 설정 등
+│   │       │   ├── exception/    # 커스텀 예외 & 전역 예외 처리
 │   │       │   └── LogmeTrackerApplication.java  # 메인 애플리케이션 실행 클래스
 │   │       └── resources/
 │   │           ├── application.yml  # Spring Boot 설정
 │   └── build.gradle              # Gradle 빌드 스크립트
 │
-├── README.md
+├─ docs
+│  └─ ERD
+│     └─ LogMe_DB_ERD.png
+│
+├─ DB_SCHEMA.md
+└─ README.md
 ```
 
 ---
@@ -117,8 +118,8 @@
 - ✅ Zustand 기반의 상태 관리 초기 설정 (useRecordStore, useAuthStore)
 - ✅ 데이터베이스 테이블 설계 및 ERD 작성 (users, records, record_images 등)
 - ✅ tsconfig, .gitignore, vite 절대경로 설정 등 개발 환경 최적화
-- ⏳ backend 구조 설계 및 디렉토리 정비
-- ⏳ 기본 Spring Boot 설정 파일 생성
+- ✅ backend 구조 설계 및 디렉토리 정비
+- ✅ 기본 Spring Boot 설정 파일 생성
 - ⏳ API 구현 및 프론트 연동 작업
 - ⏳ 이미지 업로드 및 미리보기 구현
 - ⏳ 습관 기능 도입 및 확장 설계

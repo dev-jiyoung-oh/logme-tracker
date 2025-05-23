@@ -9,6 +9,8 @@ npm-debug.log*
 # ----------------------
 dist/
 build/
+dist-ssr
+*.local
 
 # ----------------------
 # Vite specific
@@ -26,6 +28,7 @@ frontend/.vite
 # IDEs / Editors
 # ----------------------
 .vscode/
+!.vscode/extensions.json
 .idea/
 *.sublime-workspace
 *.sublime-project
@@ -39,16 +42,47 @@ Thumbs.db
 # ----------------------
 # Frontend specific
 # ----------------------
-frontend/node_modules/
-frontend/dist/
+/frontend/node_modules/
+/frontend/dist/
 
 # ----------------------
-# Backend specific (추후 백엔드 폴더 생성을 대비)
+# Backend specific
 # ----------------------
-backend/build/
-backend/.gradle/
-backend/out/
-backend/.idea/
+/backend/node_modules/
+/backend/build/
+/backend/.gradle/
+/backend/bin/
+
+# Gradle wrapper JAR은 커밋 유지
+!/backend/gradle/wrapper/gradle-wrapper.jar
+
+# src 폴더 아래 build/나 bin/이 생겨도 추적할 경우(예외)
+# /!backend/src/**/build/
+# /!backend/src/**/bin/
+
+# IDE 메타파일
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/.factorypath
+/backend/.apt_generated
+/backend/.springBeans
+/backend/.sts4-cache
+
+/backend/.idea/
+/backend/*.iws
+/backend/*.iml
+/backend/*.ipr
+/backend/out/
+
+/backend/nbproject/private/
+/backend/nbbuild/
+/backend/dist/
+/backend/nbdist/
+/backend/.nb-gradle/
+
+/backend/.vscode/
+
 
 # ----------------------
 # Logs
