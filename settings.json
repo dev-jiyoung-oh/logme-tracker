@@ -1,0 +1,14 @@
+{
+  // 포맷터 지정
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 저장 시 자동 포맷
+  "editor.formatOnSave": true,
+
+  // ESLint 자동 수정
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // ESLint 검사 대상 확장자
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+}

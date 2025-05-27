@@ -8,6 +8,7 @@
 ## 🛠 기술 스택
 
 ### Frontend
+
 - React
 - TypeScript
 - React Query
@@ -17,6 +18,7 @@
 - Axios
 
 ### Backend
+
 - Java 17
 - Spring Boot 3
 - Spring Data JPA

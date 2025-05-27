@@ -4,8 +4,8 @@ export interface Record {
   title?: string;
   content?: string;
   recordDate: string; // 'YYYY-MM-DD' 형식 날짜 문자열
-  createdAt: string;  // ISO timestamp 문자열
-  updatedAt: string;  // ISO timestamp 문자열
+  createdAt: string; // ISO timestamp 문자열
+  updatedAt: string; // ISO timestamp 문자열
   isDeleted: boolean;
   images?: RecordImage[];
 }

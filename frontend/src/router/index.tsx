@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Signup from '../pages/Signup'
-import Log from '../pages/Log'
-import History from '../pages/History'
-import Detail from '../pages/Detail'
-import NotFound from '../pages/NotFound'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import Log from '../pages/Log';
+import History from '../pages/History';
+import Detail from '../pages/Detail';
+import NotFound from '../pages/NotFound';
 
 const AppRouter = () => {
   return (
@@ -20,7 +20,7 @@ const AppRouter = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default AppRouter
+export default AppRouter;
