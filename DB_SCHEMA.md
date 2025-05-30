@@ -21,12 +21,12 @@
 | 컬럼명         | 타입           | 필수 | 고유 | 인덱스/제약조건      | 설명                |
 | ----------- | ------------ | -- | -- | ------------- | ----------------- |
 | ID          | BIGINT       | O  | O  | PK            | 회원 고유 식별자 (자동 증가) |
-| EMAIL       | VARCHAR(150) | O  | O  | UNIQUE INDEX  | 로그인용 이메일          |
+| EMAIL       | VARCHAR(150) | O  | O  | UNIQUE INDEX UQ_USERS_EMAIL_IS_DELETED  | 로그인용 이메일          |
 | PASSWORD    | VARCHAR(100) | O  |    |               | 비밀번호 (해시값 저장)     |
 | NICKNAME    | VARCHAR(20)  | O  |    |               | 사용자 닉네임           |
 | CREATED_AT | TIMESTAMP    | O  |    | JPA Auditing  | 가입 일시 (KST)       |
 | UPDATED_AT | TIMESTAMP    | O  |    | JPA Auditing  | 수정 일시 (KST)       |
-| IS_DELETED | BOOLEAN      | O  |    | DEFAULT FALSE | 소프트 삭제 여부         |
+| IS_DELETED | BOOLEAN      | O  |    | UNIQUE INDEX UQ_USERS_EMAIL_IS_DELETED, DEFAULT FALSE | 소프트 삭제 여부         |
 
 ---
 
