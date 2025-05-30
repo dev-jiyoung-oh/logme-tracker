@@ -1,13 +1,8 @@
-import './App.css';
+import './index.css';
+import AppRouter from './router'
 
 function App() {
-  return (
-    <>
-      <div className="p-10 bg-red-100 text-3xl font-bold text-blue-500 underline">
-        Tailwind 적용 테스트
-      </div>
-    </>
-  );
+  return <AppRouter />
 }
 
 export default App;

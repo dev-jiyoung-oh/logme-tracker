@@ -1,27 +1,34 @@
 package com.logme.controller;
 
+import com.logme.dto.LoginRequest;
 import com.logme.dto.SignupRequest;
-import com.logme.dto.UserResponse;
-import com.logme.service.UserService;
+import com.logme.dto.AuthResponse;
+import com.logme.service.AuthService;
+
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-    private final UserService userService;
+    private final AuthService authService;
 
-    public AuthController(UserService userService) {
-        this.userService = userService;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<UserResponse> signup(@RequestBody SignupRequest req) {
-        return ResponseEntity.ok(userService.signup(req));
+    public ResponseEntity<AuthResponse> signup(@RequestBody SignupRequest req) {
+        log.debug(""+req);
+        return ResponseEntity.ok(authService.signup(req));
     }
-
+    
     @PostMapping("/login")
-    public ResponseEntity<UserResponse> login(@RequestBody SignupRequest req) {
-        return ResponseEntity.ok(userService.login(req.getEmail(), req.getPassword()));
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest req) {
+        log.debug(""+req);
+        return ResponseEntity.ok(authService.login(req));
     }
 }

@@ -43,12 +43,11 @@
 ## 🔐 주요 기능
 
 - 회원가입 및 로그인 (JWT 기반 인증)
-- 사용자 전용 기록 작성/수정/삭제 (CRUD)
+- 사용자 전용 기록 CRUD (상세, 이미지)
 - 월 단위 기록 목록 조회
-- 기록 상세 보기 (이미지 포함)
 - 초기 UI 상태 및 모달 제어는 Zustand를 통한 로컬 상태 관리로 처리
-- 다중 이미지 업로드 및 미리보기 기능 (추후 구현 예정)
 - 향후 확장
+  - 다중 이미지 업로드 및 미리보기 기능
   - 습관 트래킹 기능 (habit, habit_logs)
   - 신체 정보 기록 기능 (body_logs)
   - 데이터 통계 시각화 기능
@@ -78,14 +77,14 @@
 │   │   ├── store/                # Zustand 기반 전역 상태 관리
 │   │   ├── types/                # 전역 타입 정의
 │   │   ├── utils/                # 공통 유틸 함수
-│   │   ├── App.tsx               # 루트 컴포넌트
-│   │   ├── main.tsx              # 진입점
-│   │   └── index.css             # 글로벌 스타일
-│   ├── tailwind.config.cjs       # Tailwind 설정
-│   ├── postcss.config.cjs        # PostCSS 설정
-│   ├── tsconfig.json             # TypeScript 설정
-│   ├── package.json              # npm 의존성 관리
-│   └── vite.config.ts            # Vite 설정
+│   │   ├─ App.tsx               # 루트 컴포넌트
+│   │   ├─ main.tsx              # 진입점
+│   │   └─ index.css             # 글로벌 스타일
+│   ├─ tailwind.config.cjs       # Tailwind 설정
+│   ├─ postcss.config.cjs        # PostCSS 설정
+│   ├─ tsconfig.json             # TypeScript 설정
+│   ├─ package.json              # npm 의존성 관리
+│   └─ vite.config.ts            # Vite 설정
 │
 ├── backend/
 │   ├── src/
@@ -96,12 +95,13 @@
 │   │       │   ├── repository/   # Spring Data JPA 레포지토리
 │   │       │   ├── domain/       # Entity 및 JPA 관련 클래스
 │   │       │   ├── dto/          # 데이터 전송용 DTO 클래스
-│   │       │   ├── config/       # Security, Jackson, Swagger 설정 등
+│   │       │   ├── config/       # SecurityConfig 같은 설정 클래스
+│   │       │   ├── security/     # JWT, OAuth 관련 컴포넌트
 │   │       │   ├── exception/    # 커스텀 예외 & 전역 예외 처리
-│   │       │   └── LogmeTrackerApplication.java  # 메인 애플리케이션 실행 클래스
+│   │       │   └─ LogmeTrackerApplication.java  # 메인 애플리케이션 실행 클래스
 │   │       └── resources/
-│   │           ├── application.yml  # Spring Boot 설정
-│   └── build.gradle              # Gradle 빌드 스크립트
+│   │           └─ application.yml  # Spring Boot 설정
+│   └── build.gradle                 # Gradle 빌드 스크립트
 │
 ├─ docs
 │  └─ ERD
@@ -121,11 +121,24 @@
 - ✅ 데이터베이스 테이블 설계 및 ERD 작성 (users, records, record_images 등)
 - ✅ tsconfig, .gitignore, vite 절대경로 설정 등 개발 환경 최적화
 - ✅ backend 구조 설계 및 디렉토리 정비
-- ✅ 기본 Spring Boot 설정 파일 생성
-- ⏳ API 구현 및 프론트 연동 작업
-- ⏳ 이미지 업로드 및 미리보기 구현
-- ⏳ 습관 기능 도입 및 확장 설계
-- ⏳ 마이페이지 등 사용자 기능 고도화
+- ✅ Spring Boot 설정 파일 생성
+- ✅ Spring Security 설정 파일 생성
+- ✅ JWT 설정 파일 생성
+- ✅ 회원가입, 로그인 API/화면 구현
+- ⏳ 로그아웃 API/화면 구현
+- ⏳ 홈 화면 구현
+- ⏳ 프론트엔드 라우터/페이지 접근 제어 (비로그인 시 홈/로그인 페이지 리다이렉트)
+- ⏳ 마이페이지 - 프로필 조회 및 회원정보 수정 API/화면 구현
+- ⏳ 기록(Record) CRUD API/화면 구현 (목록: 페이징/날짜별/검색, 상세)
+- ⏳ 기록(Record) 달력 조회(페이징/검색) API/화면 구현
+- ⏳ 기록(Record) 이미지 업로드 및 첨부 구현
+- ⏳ 습관(Habit) CRUD API/화면 구현
+- ⏳ 습관 로그(HabitLogs) CRUD API/화면 구현
+- ⏳ 신체 정보 기록(BodyLogs) CRUD API/화면 구현
+- ⏳ 마이페이지(내 기록, 습관, 신체정보) 데이터 시각화(차트 등등)
+- ⏳ 전체 에러 처리 UX 통일 및 알림(Toast 등) 적용
+- ⏳ 테스트 코드 작성 및 예외 상황 점검
+- ⏳ API 보안(권한 체크/토큰 만료 대응 등)
 
 ---
 
