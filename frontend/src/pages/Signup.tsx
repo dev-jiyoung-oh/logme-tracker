@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSignup } from '@/hooks/useSignup';
 import { AxiosError } from 'axios';
 import { ApiError } from '@/types/api';
 import { isEmailValid } from '@/utils/validate';
+import { Button } from '@/components/Button';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ export default function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto p-4">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto p-4 text-center">
       <h1 className="text-2xl font-bold">회원가입</h1>
 
       {errorMsg && <p className="text-red-500">{errorMsg}</p>}
@@ -67,19 +68,19 @@ export default function Signup() {
         className="w-full p-2 border rounded"
       />
 
-      <button
-        type="submit"
-        disabled={!isFormValid || isPending}
-        className="w-full p-2 rounded bg-blue-500 text-white transition-colors duration-150 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 hover:outline-2 hover:outline-blue-300 disabled:bg-gray-500 disabled:hover:outline-none disabled:focus:outline-none disabled:cursor-not-allowed"
-      >
-        {isPending ? '가입 중...' : '회원가입'}
-      </button>
+      <Button
+        as='button'
+        type='submit'
+        fullWidth={true}
+        isDisabled={!isFormValid}
+        loading={isPending}
+        loadingText='가입 중...'>
+          회원가입
+      </Button>
 
-      <p className="text-sm text-center">
-        이미 계정이 있나요?{' '}
-        <Link to="/login" className="text-blue-600">
-          로그인
-        </Link>
+      <p className="text-sm">
+        이미 계정이 있나요?
+        <Button as='a' href="/login" variant='h-underline' size='sm'>로그인</Button>
       </p>
     </form>
   );

@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useLogin } from '@/hooks/useLogin';
 import { AxiosError } from 'axios';
 import { ApiError } from '@/types/api';
 import { isEmailValid } from '@/utils/validate';
+import { Button } from '@/components/Button';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -32,31 +33,43 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto p-4 text-center">
+
+      <h1 className="text-2xl font-bold">로그인</h1>
+
       {errorMsg && <p className="text-red-500">{errorMsg}</p>}
+      
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
+        className="w-full p-2 border rounded"
       />
+      
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
+        className="w-full p-2 border rounded"
       />
-      <button
-        type="submit"
-        disabled={!isFormValid || isPending}
-        className="w-full p-2 rounded bg-blue-500 text-white transition-colors duration-150 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 hover:outline-2 hover:outline-blue-300 disabled:bg-gray-500 disabled:hover:outline-none disabled:focus:outline-none disabled:cursor-not-allowed"
-      >
-        {isPending ? '로딩중...' : '로그인'}
-      </button>
-      <p>
-        회원이 아니신가요? <Link to="/signup">회원가입</Link>
+
+      <Button
+        as='button'
+        type='submit'
+        fullWidth={true}
+        isDisabled={!isFormValid}
+        loading={isPending}
+        loadingText='로딩중...'>
+          로그인
+      </Button>
+
+      <p className="text-sm">
+        회원이 아니신가요?
+        <Button as='a' href="/signup" variant='h-underline' size="sm">회원가입</Button>
       </p>
     </form>
   );
