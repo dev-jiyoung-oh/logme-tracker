@@ -115,17 +115,16 @@
 
 ## 🎯 개발 목표 및 진행 현황
 
-- ✅ frontend 구조 설계 및 디렉토리 정비
+- ✅ frontend, backend 구조 설계 및 디렉토리 정비
 - ✅ 라우팅 및 페이지 컴포넌트 기본 생성 (Log, History, Detail 등)
 - ✅ Zustand 기반의 상태 관리 초기 설정 (useRecordStore, useAuthStore)
 - ✅ 데이터베이스 테이블 설계 및 ERD 작성 (users, records, record_images 등)
 - ✅ tsconfig, .gitignore, vite 절대경로 설정 등 개발 환경 최적화
-- ✅ backend 구조 설계 및 디렉토리 정비
-- ✅ Spring Boot 설정 파일 생성
-- ✅ Spring Security 설정 파일 생성
-- ✅ JWT 설정 파일 생성
+- ✅ Spring Boot, Spring Security, JWT 설정 파일 생성
 - ✅ 회원가입, 로그인 API/화면 구현
-- ⏳ 로그아웃 API/화면 구현
+- ✅ 버튼 컴포넌트 구현
+- ⏳ 헤더 레이아웃 구현
+- ⏳ 로그아웃 구현
 - ⏳ 홈 화면 구현
 - ⏳ 프론트엔드 라우터/페이지 접근 제어 (비로그인 시 홈/로그인 페이지 리다이렉트)
 - ⏳ 마이페이지 - 프로필 조회 및 회원정보 수정 API/화면 구현
