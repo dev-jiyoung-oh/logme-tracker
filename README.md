@@ -65,18 +65,18 @@
 ```logme-tracker/
 │
 ├── frontend/
-│   ├── public/                    # 정적 파일
+│   ├── public/                  # 정적 파일
 │   ├── src/
-│   │   ├── assets/                # 이미지, 아이콘 등 정적 리소스
-│   │   ├── components/            # 공통 UI 컴포넌트
-│   │   ├── layout/                # 페이지 공통 레이아웃
-│   │   ├── pages/                 # 라우트 단위 페이지 컴포넌트
-│   │   ├── router/               # React Router 설정
-│   │   ├── services/             # API 호출 함수 (Axios 핸들러)
-│   │   ├── hooks/                # 커스텀 훅
-│   │   ├── store/                # Zustand 기반 전역 상태 관리
-│   │   ├── types/                # 전역 타입 정의
-│   │   ├── utils/                # 공통 유틸 함수
+│   │   ├── assets/              # 이미지, 아이콘 등 정적 리소스
+│   │   ├── components/          # 공통 UI 컴포넌트
+│   │   ├── layouts/             # 페이지 공통 레이아웃
+│   │   ├── pages/               # 라우트 단위 페이지 컴포넌트
+│   │   ├── routes/              # React Router 설정
+│   │   ├── services/            # API 호출 함수 (Axios 핸들러)
+│   │   ├── hooks/               # 커스텀 훅
+│   │   ├── stores/              # Zustand 기반 전역 상태 관리
+│   │   ├── types/               # 전역 타입 정의
+│   │   ├── utils/               # 공통 유틸 함수
 │   │   ├─ App.tsx               # 루트 컴포넌트
 │   │   ├─ main.tsx              # 진입점
 │   │   └─ index.css             # 글로벌 스타일
@@ -125,8 +125,8 @@
 - ✅ 버튼 컴포넌트 구현
 - ✅ 헤더 레이아웃 구현
 - ✅ 로그아웃 구현
+- ✅ 페이지 접근 제어 (비로그인 시 홈/로그인 페이지 리다이렉트)
 - ⏳ 홈 화면 구현
-- ⏳ 프론트엔드 라우터/페이지 접근 제어 (비로그인 시 홈/로그인 페이지 리다이렉트)
 - ⏳ 마이페이지 - 프로필 조회 및 회원정보 수정 API/화면 구현
 - ⏳ 기록(Record) CRUD API/화면 구현 (목록: 페이징/날짜별/검색, 상세)
 - ⏳ 기록(Record) 달력 조회(페이징/검색) API/화면 구현

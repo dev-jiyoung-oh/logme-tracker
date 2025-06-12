@@ -3,7 +3,7 @@ export type ButtonSize = "sm" | "md" | "lg";
 
 // 베이스(공통) 스타일
 export const baseButton =
-  "inline-flex items-center justify-center rounded font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+  "inline-flex items-center justify-center rounded font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer disabled:cursor-not-allowed";
 
 // variant 스타일
 export const variantStyles: Record<ButtonVariant, string> = {
